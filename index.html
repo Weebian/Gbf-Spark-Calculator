@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GBF calc</title>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!--Angular JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <!--JS-->
+    <script src="app.js"></script>
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="calc.css">
+</head>
+
+<body>
+    <h1>
+        GBF Spark Calculator
+    </h1>
+    <div ng-app="gbfCalc">
+        <div ng-controller="calcController">
+            <div class="row inputRow">
+                <div class="col">
+                    Number of crystals:
+                    <input type="number" min="0" ng-change="result()" ng-model="crystal_num">
+                </div>
+                <div class="col">
+                    Number of ten draw tickets:
+                    <input type="number" min="0" ng-change="result()" ng-model="ten_draw_tickets">
+                </div>
+                <div class="col">
+                    Number of single draw tickets:
+                    <input type="number" min="0" ng-change="result()" ng-model="solo_draw_tickets">
+                </div>
+                <div class="col">
+                    Number of sparks:
+                    <input type="number" min="0" ng-change="result()" ng-model="spark_num">
+                </div>
+            </div>
+            <div class="row resultRow">
+                <div class="col">
+                    You can obtain {{result1}} sparks
+                </div>
+            </div>
+            <div class="row resultRow">
+                <div class="col">
+                    You require {{result2}} more sparks to spark
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
